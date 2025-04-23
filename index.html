@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    
+    <title>Devbet</title>
+    <link rel="icon" href="assets/images/logo-fav.ico" type="image/x-icon">
+</head>
+
+<body data-bs-theme="dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/devbet-logo-light.png"
+                    style="width:150px;" alt="Logo devbet"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Botão de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link nav-item" href="index.html">Jogos</a>
+                    <a class="nav-link nav-item" href="apostas.html">Apostas</a>
+                    <a class="nav-link nav-item" href="suporte.html">Suporte</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="btn nav-link nav-item" role="button" data-bs-toggle="modal" data-bs-target="#modal-entrar"
+                        id="btn-entrar">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal do forms de login -->
+    <div class="modal fade" id="modal-entrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modal-entrar-label" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal-entrar-label">Entre para jogar!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email-input" placeholder="E-mail">
+                            <label for="email-input">E-mail</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="senha-input" placeholder="Senha">
+                            <label for="senha-input">Senha</label>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100">Entrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex flex-column align-items-center">
+                    <p>Não possui conta?</p>
+                    <a href="#registrar" style="text-decoration: none; color: var(--bs-info);">Registre-se</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Corpo + rodapé -->
+    <div class="container">
+        <div id="carousel-jogos" class="carousel slide mb-5 rounded-3 overflow-hidden">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel-jogos" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel-jogos" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel-jogos" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images/img-carousel-1.jpg" class="d-block w-100"
+                        alt="Bill Gates Fans x Apple INC.">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/img-carousel-2.jpg" class="d-block w-100"
+                        alt="Javanópolis FC x Amigos do C">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/img-carousel-3.jpg" class="d-block w-100" alt="Microsoft Guys x Linux AFC">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-jogos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-jogos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="mb-5">
+            <h4 class="mb-3" style="color: var(--bs-info);">Principais jogos</h4>
+            <div class="card mb-2 rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">19:00</span>
+                        <span class="fw-bold">Javanópolis FC</span>
+                        <span class="fw-bold">Unidos do C</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.85</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">3.00</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">2.35</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-2 rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">19:30</span>
+                        <span class="fw-bold">Bill Gates Fans</span>
+                        <span class="fw-bold">Apple INC.</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.6</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">2.42</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">4.67</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">21:00</span>
+                        <span class="fw-bold">Microsoft Guys</span>
+                        <span class="fw-bold">Linux AFC</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.2</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">2.45</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">7.21</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h4 class="mb-3">Jogos de hoje</h4>
+            <div class="card mb-2 rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">19:00</span>
+                        <span class="fw-bold">Javanópolis FC</span>
+                        <span class="fw-bold">Unidos do C</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.85</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">3.00</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">2.35</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-2 rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">19:30</span>
+                        <span class="fw-bold">Bill Gates Fans</span>
+                        <span class="fw-bold">Apple INC.</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.6</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">2.42</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">4.67</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-2 rounded-1 card-jogo">
+                <div class="card-body d-flex justify-content-between align-items-center flex-wrap text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column text-start">
+                        <span class="small">21:00</span>
+                        <span class="fw-bold">Microsoft Guys</span>
+                        <span class="fw-bold">Linux AFC</span>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>1</span>
+                            <span class="fw-bold">1.2</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0 mb-2">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>X</span>
+                            <span class="fw-bold">2.45</span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-2 mb-md-0">
+                        <button class="btn btn-sm d-flex align-items-center justify-content-between w-100">
+                            <span>2</span>
+                            <span class="fw-bold">7.21</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-3">
+                    <img src="assets/images/img-card-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Criar aposta</h5>
+                        <p class="card-text">Combine múltiplas seleções de diferentes jogos</p>
+                        <a href="#" class="btn btn-info">Criar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-3">
+                    <img src="assets/images/img-card-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Promoções</h5>
+                        <p class="card-text">Participe de promoções e concorra a milhares de prêmios</p>
+                        <a href="#" class="btn btn-info">Participar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-3">
+                    <img src="assets/images/img-card-3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Depositar</h5>
+                        <p class="card-text">Faça seu depósito usando
+                            <a href="#" onclick="return false;" data-bs-trigger="hover" data-bs-toggle="popover"
+                                title="Outras formas de pagamento" data-bs-placement="bottom" data-bs-html="true"
+                                data-bs-content="Há outras formas de pagamento, como:
+                                                cartãode de débito, cartão de crédito, débito
+                                                automático, TED e criptomoedas." style="text-decoration: none;">
+                                Pix ou boleto
+                            </a>
+                        </p>
+                        <a href="#" class="btn btn-info">Depositar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-sm-6 mb-4">
+                        <h6 class="mb-2">Ajuda</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Depósito</a></li>
+                            <li><a href="#">Saque</a></li>
+                            <li><a href="#">FAQ devbet</a></li>
+                            <li><a href="#">Termos e condições</a></li>
+                            <li><a href="#">Aviso de privacidade</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-6 mb-4">
+                        <h6 class="mb-2">Resultados</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Minhas apostas</a></li>
+                            <li><a href="#">Longo prazo</a></li>
+                            <li><a href="#">Jogos ao-vivo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-sm-12 text-lg-start mb-4">
+                        <h6 class="mb-2">Jogue com responsabilidade</h6>
+                        <p class="small text-muted">
+                            Este site é destinado <span class="fw-bold">a maiores de 18 anos</span>. O jogo pode causar
+                            dependência. Jogue com
+                            moderação.
+                        </p>
+                    </div>
+                </div>
+                <div class="row justify-content-center" id="footer-logo">
+                    <div class="col-12 text-center">
+                        <img src="assets/images/devbet-logo-light.png" alt="Logo devbet" style="width: 120px;">
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
