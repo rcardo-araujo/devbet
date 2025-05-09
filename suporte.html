@@ -7,42 +7,51 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/all.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 
-    <title>devbet</title>
+    <title>Suporte</title>
     <link rel="icon" href="assets/images/logo-fav.ico" type="image/x-icon">
 </head>
 
 <body data-bs-theme="dark">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md fixed-top bg-body">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/devbet-logo-light.png"
+            <a class="navbar-brand me-lg-5" href="index.html"><img src="assets/images/devbet-logo-light.png"
                     style="width:150px;" alt="Logo devbet"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
                 aria-controls="menu" aria-expanded="false" aria-label="Botão de navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="menu">
-                <div class="navbar-nav mx-auto">
+            <div class="collapse navbar-collapse flex-column flex-md-row" id="menu">
+                <div class="navbar-nav mx-auto mb-3 mb-md-0">
                     <a class="nav-link nav-item" href="index.html">Jogos</a>
                     <a class="nav-link nav-item" href="apostas.html">Apostas</a>
                     <a class="nav-link nav-item text-info" href="suporte.html">Suporte</a>
                 </div>
-                <div class="navbar-nav">
-                    <a class="btn nav-link nav-item" href="#entrar" role="button" data-bs-toggle="modal"
-                        data-bs-target="#modal-entrar" id="btn-entrar">Entrar</a>
+                <div class="navbar-nav gap-2 gap-lg-3">
+                    <a class="btn btn-outline-secondary position-relative" role="button" data-bs-toggle="modal"
+                        data-bs-target="#modal-alertas" id="btn-alertas">
+                        Alertas
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                            <span class="visually-hidden">Alertas</span>
+                        </span>
+                    </a>
+                    <a class="btn btn-outline-info" role="button" data-bs-toggle="modal" data-bs-target="#modal-entrar"
+                        id="btn-entrar">Entrar</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Modal de forms de login -->
+    <!-- modal login -->
     <div class="modal fade" id="modal-entrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="modal-entrar-label" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modal-entrar-label">Entre para jogar!</h1>
+                    <h1 class="modal-title fs-5" id="modal-label">Entre para jogar!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -67,8 +76,62 @@
         </div>
     </div>
 
-    <!-- Corpo + rodapé -->
-    <div class="container">
+    <!-- modal notificações -->
+    <div class="modal fade" id="modal-alertas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modal-alertas-label" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal-label">Notificações</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <ul class="list-group list-group-flush rounded-bottom">
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-trophy-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Você ganhou uma aposta!</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">Há 3 horas</span>
+                                </div>
+                            </div>
+                            <a class="text-info d-flex align-items-center ms-auto text-decoration-none"
+                                href="apostas.html">
+                                <span class="fw-semibold">Ir para aposta</span>
+                                <i class="bi bi-chevron-bar-right"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-wallet-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Depósito realizado</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">Há 11 horas</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-gift-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Aposta grátis na área!</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">1 dia atrás</span>
+                                </div>
+                            </div>
+                            <a class="text-info d-flex align-items-center ms-auto text-decoration-none"
+                                href="index.html">
+                                <span class="fw-semibold">Participar</span>
+                                <i class="bi bi-chevron-bar-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- conteúdo -->
+    <div class="container mb-5">
         <div class="form-floating mb-4">
             <input type="search" class="form-control" id="search-input" placeholder="Como podemos ajudar?">
             <label for="search-input">Como podemos ajudar?</label>
@@ -285,7 +348,60 @@
             </div>
         </div>
 
-        <div class="footer mt-4">
+        <div class="card mb-0">
+            <div class="card-header fs-5 text-info mb-0">
+                Mande sua mensagem
+            </div>
+            <card class="card-body p-4">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="input-nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="input-nome">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="input-sobrenome" class="form-label">Sobrenome</label>
+                        <input type="text" class="form-control" id="input-sobrenome">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="input-email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="input-email" placeholder="joedoe@gmail.com">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="input-tel" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="input-tel">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="input-cidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="input-cidade">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="input-estado" class="form-label">Estado</label>
+                        <select id="input-estado" class="form-select">
+                            <option selected>Selecione</option>
+                            <option>Rio de Janeiro</option>
+                            <option>São Paulo</option>
+                            <option>Minas Gerais</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="input-cep" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="input-cep">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-msg" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="input-msg" rows="4"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-info">Enviar</button>
+                    </div>
+                </form>
+            </card>
+        </div>
+    </div>
+
+    <!-- rodapé -->
+    <div class="container mt-0">
+        <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-sm-6 mb-4">
