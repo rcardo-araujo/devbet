@@ -9,58 +9,49 @@
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 
-
-    <title>Devbet</title>
+    <title>Apostas</title>
     <link rel="icon" href="assets/images/logo-fav.ico" type="image/x-icon">
 </head>
 
 <body data-bs-theme="dark">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md fixed-top">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/devbet-logo-light.png"
+            <a class="navbar-brand me-lg-5" href="index.html"><img src="assets/images/devbet-logo-light.png"
                     style="width:150px;" alt="Logo devbet"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
                 aria-controls="menu" aria-expanded="false" aria-label="Botão de navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="menu">
-                <div class="navbar-nav mx-auto">
+            <div class="collapse navbar-collapse flex-column flex-md-row" id="menu">
+                <div class="navbar-nav mx-auto mb-3 mb-md-0">
                     <a class="nav-link nav-item" href="index.html">Jogos</a>
                     <a class="nav-link nav-item text-info" href="apostas.html">Apostas</a>
                     <a class="nav-link nav-item" href="suporte.html">Suporte</a>
                 </div>
-                <div class="navbar-nav">
-                    <button type="button" class="btn btn-primary position-relative nav-item">
-                        Notificações
-                        <span id="contador-aposta"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
-                            <span class="visually-hidden">unread messages</span>
+                <div class="navbar-nav gap-2 gap-lg-3">
+                    <a class="btn btn-outline-secondary position-relative" role="button" data-bs-toggle="modal"
+                        data-bs-target="#modal-alertas" id="btn-alertas">
+                        Alertas
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                            <span class="visually-hidden">Alertas</span>
                         </span>
-                    </button>
-                    <a class="btn nav-link nav-item ms-4" role="button" data-bs-toggle="modal" data-bs-target="#modal-entrar"
+                    </a>
+                    <a class="btn btn-outline-info" role="button" data-bs-toggle="modal" data-bs-target="#modal-entrar"
                         id="btn-entrar">Entrar</a>
                 </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const savedCount = localStorage.getItem('betCount');
-                        if (savedCount !== null) {
-                            document.getElementById('contador-aposta').textContent = savedCount;
-                        }
-                    });
-                </script>
             </div>
         </div>
     </nav>
 
-    <!-- Modal do forms de login -->
+    <!-- modal login -->
     <div class="modal fade" id="modal-entrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="modal-entrar-label" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modal-entrar-label">Entre para jogar!</h1>
+                    <h1 class="modal-title fs-5" id="modal-label">Entre para jogar!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -84,158 +75,204 @@
         </div>
     </div>
 
-    <!-- Navegar -->
-    
-    <nav>
-        <div class="nav nav-underline justify-content-center mb-4" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#active-bets" role="tab"
-                aria-controls="nav-home" aria-selected="true">Apostas Ativas</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#closed-bets" role="tab"
-                aria-controls="nav-profile" aria-selected="false">Apostas Fechadas</a>
-        </div>
-    </nav>
-
-    <!-- Corpo + rodapé -->
-    <div class="container tab-content" id="nav-tabContent">
-        <div id="active-bets" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="card mb-4">
-                <div class="card-header text-info fw-black fs-5 py-3 mb-0">
-                    Múltipla
+    <!-- modal notificações -->
+    <div class="modal fade" id="modal-alertas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modal-alertas-label" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal-label">Notificações</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <ul class="list-group list-group-flush px-3">
-                    <li class="list-group-item py-4">
-                        <div class="d-flex align-items-center gap-4 mb-2">
-                            <h5 class="mb-0 fs-5">Javanópolis FC</h5>
-                            <span class="fs-5 fw-light">1.85</span>
-                        </div>
-                        <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
-                        <div class="d-flex justify-content-between">
-                            <span>Javanópolis FC</span>
-                            <span class="text-muted">Hoje</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Unidos do C</span>
-                            <span class="text-muted">19:00</span>
-                        </div>
-                    </li>
-                    <li class="list-group-item py-4">
-                        <div class="d-flex align-items-center gap-4 mb-2">
-                            <h5 class="mb-0 fs-5">Linux AFC</h5>
-                            <span class="fs-5 fw-light">7.21</span>
-                        </div>
-                        <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
-                        <div class="d-flex justify-content-between">
-                            <span>Microsoft Guys</span>
-                            <span class="text-muted">Hoje</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Linux AFC</span>
-                            <span class="text-muted">21:00</span>
-                        </div>
-                    </li>
-                    <li class="list-group-item py-4">
-                        <div class="d-flex align-items-center gap-4 mb-2">
-                            <h5 class="mb-0 fs-5">Empate</h5>
-                            <span class="fs-5 fw-light">2.42</span>
-                        </div>
-                        <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
-                        <div class="d-flex justify-content-between">
-                            <span>Bill Gates Fans</span>
-                            <span class="text-muted">Hoje</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Apple INC.</span>
-                            <span class="text-muted">19:30</span> <!-- Corrigido o horário -->
-                        </div>
-                    </li>
-                    <li class="list-group-item py-3">
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-column">
-                                <span class="fw-normal">Aposta</span>
-                                <span class="fs-5 fw-bold">R$30,00</span>
+                <div class="modal-body p-0">
+                    <ul class="list-group list-group-flush rounded-bottom">
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-trophy-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Você ganhou uma aposta!</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">Há 3 horas</span>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column">
-                                <span class="fw-normal">Retorno Total</span>
-                                <span class="fs-5 fw-bold">R$120,00</span>
+                            <a class="text-info d-flex align-items-center ms-auto text-decoration-none"
+                                href="apostas.html">
+                                <span class="fw-semibold">Ir para aposta</span>
+                                <i class="bi bi-chevron-bar-right"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-wallet-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Depósito realizado</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">Há 11 horas</span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="px-3 py-2">
-                    <div class="progress my-2" role="progressbar" aria-label="Progresso das apostas" aria-valuenow="34" aria-valuemin="0"
-                        aria-valuemax="100" style="height: 3vh;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 34%; height: 100%;">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span class="text-muted">Apostas finalizadas: 1</span>
-                        <span class="text-muted">Próximos jogos: 2</span>
-                    </div>
-                </div>
-                <div class="card-footer p-0">
-                    <button class="btn btn-info w-100 py-3 rounded-top-0 fw-semibold">
-                        Encerrar Aposta R$20,00
-                    </button>
-                </div>
-            </div>      
-            
-
-
-            <div class="card mb-4">
-                <div class="card-header text-info fw-black fs-5 py-3 mb-0">
-                    Simples
-                </div>
-                <ul class="list-group list-group-flush px-3">
-                    <li class="list-group-item py-4">
-                        <div class="d-flex align-items-center gap-4 mb-2">
-                            <h5 class="mb-0 fs-5">Silicon Dunkers</h5>
-                            <span class="fs-5 fw-light">1.90</span>
-                        </div>
-                        <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
-                        <div class="d-flex justify-content-between">
-                            <span>Silicon Dunkers</span>
-                            <span class="text-muted">Hoje</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Wifi Ballers</span>
-                            <span class="text-muted">22:00</span>
-                        </div>
-                    </li>
-                    <li class="list-group-item py-3">
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-column">
-                                <span class="fw-normal">Aposta</span>
-                                <span class="fs-5 fw-bold">R$50,00</span>
+                        </li>
+                        <li class="list-group-item d-flex flex-column py-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-gift-fill fs-4"></i>
+                                <div class="d-flex flex-column">
+                                    <span>Aposta grátis na área!</span>
+                                    <span class="text-muted" style="font-size: 0.8rem;">1 dia atrás</span>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column">
-                                <span class="fw-normal">Retorno Total</span>
-                                <span class="fs-5 fw-bold">R$90,00</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="px-3 py-2">
-                    <div class="progress my-2" role="progressbar" aria-label="Progresso das apostas" aria-valuenow="1"
-                        aria-valuemin="0" aria-valuemax="100" style="height: 3vh;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                            style="width: 1%; height: 100%;">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span class="text-muted">Apostas finalizadas: 0</span>
-                        <span class="text-muted">Próximos jogos: 1</span>
-                    </div>
-                </div>
-                <div class="card-footer p-0">
-                    <button class="btn btn-info w-100 py-3 rounded-top-0 fw-semibold">
-                        Encerrar Aposta R$49,00
-                    </button>
+                            <a class="text-info d-flex align-items-center ms-auto text-decoration-none"
+                                href="index.html">
+                                <span class="fw-semibold">Participar</span>
+                                <i class="bi bi-chevron-bar-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-            <div id="closed-bets" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <!-- conteúdo -->
+    <div class="container mb-5">
+        <nav class="mb-4">
+            <div class="nav nav-underline justify-content-center mb-4 text-decoration-none" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active text-body" id="nav-home-tab" data-bs-toggle="tab" href="#active-bets"
+                    role="tab" aria-controls="nav-home" aria-selected="true">Apostas Ativas</a>
+                <a class="nav-item nav-link text-body" id="nav-profile-tab" data-bs-toggle="tab" href="#closed-bets"
+                    role="tab" aria-controls="nav-profile" aria-selected="false">Apostas Fechadas</a>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <div id="active-bets" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="card mb-4">
+                    <div class="card-header text-info fw-black fs-5 py-3 mb-0">
+                        Múltipla
+                    </div>
+                    <ul class="list-group list-group-flush px-3">
+                        <li class="list-group-item py-4">
+                            <div class="d-flex align-items-center gap-4 mb-2">
+                                <h5 class="mb-0 fs-5">Javanópolis FC</h5>
+                                <span class="fs-5 fw-light">1.85</span>
+                            </div>
+                            <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
+                            <div class="d-flex justify-content-between">
+                                <span>Javanópolis FC</span>
+                                <span class="text-muted">Hoje</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Unidos do C</span>
+                                <span class="text-muted">19:00</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-4">
+                            <div class="d-flex align-items-center gap-4 mb-2">
+                                <h5 class="mb-0 fs-5">Linux AFC</h5>
+                                <span class="fs-5 fw-light">7.21</span>
+                            </div>
+                            <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
+                            <div class="d-flex justify-content-between">
+                                <span>Microsoft Guys</span>
+                                <span class="text-muted">Hoje</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Linux AFC</span>
+                                <span class="text-muted">21:00</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-4">
+                            <div class="d-flex align-items-center gap-4 mb-2">
+                                <h5 class="mb-0 fs-5">Empate</h5>
+                                <span class="fs-5 fw-light">2.42</span>
+                            </div>
+                            <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
+                            <div class="d-flex justify-content-between">
+                                <span>Bill Gates Fans</span>
+                                <span class="text-muted">Hoje</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Apple INC.</span>
+                                <span class="text-muted">19:30</span> <!-- Corrigido o horário -->
+                            </div>
+                        </li>
+                        <li class="list-group-item py-4">
+                            <div class="d-flex justify-content-between mb-4">
+                                <div class="d-flex flex-column">
+                                    <span class="fw-normal">Aposta</span>
+                                    <span class="fs-5 fw-bold">R$30,00</span>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <span class="fw-normal">Retorno Total</span>
+                                    <span class="fs-5 fw-bold">R$120,00</span>
+                                </div>
+                            </div>
+                            <div class="progress my-2" role="progressbar" aria-label="Progresso das apostas"
+                                aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="height: 3vh;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary"
+                                    style="width: 34%; height: 100%;">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Apostas finalizadas: 1</span>
+                                <span class="text-muted">Próximos jogos: 2</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-footer p-0">
+                        <button class="btn btn-info w-100 py-3 rounded-top-0 fw-semibold">
+                            Encerrar Aposta R$20,00
+                        </button>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header text-info fw-black fs-5 py-3 mb-0">
+                        Simples
+                    </div>
+                    <ul class="list-group list-group-flush px-3">
+                        <li class="list-group-item py-4">
+                            <div class="d-flex align-items-center gap-4 mb-2">
+                                <h5 class="mb-0 fs-5">Silicon Dunkers</h5>
+                                <span class="fs-5 fw-light">1.90</span>
+                            </div>
+                            <h6 class="card-subtitle text-muted mb-3 fw-light">Resultado Final</h6>
+                            <div class="d-flex justify-content-between">
+                                <span>Silicon Dunkers</span>
+                                <span class="text-muted">Hoje</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Wifi Ballers</span>
+                                <span class="text-muted">22:00</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item py-4">
+                            <div class="d-flex justify-content-between mb-4">
+                                <div class="d-flex flex-column">
+                                    <span class="fw-normal">Aposta</span>
+                                    <span class="fs-5 fw-bold">R$50,00</span>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <span class="fw-normal">Retorno Total</span>
+                                    <span class="fs-5 fw-bold">R$90,00</span>
+                                </div>
+                            </div>
+                            <div class="progress my-2" role="progressbar" aria-label="Progresso das apostas"
+                                aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="height: 3vh;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary"
+                                    style="width: 1%; height: 100%;">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Apostas finalizadas: 0</span>
+                                <span class="text-muted">Próximos jogos: 1</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-footer p-0">
+                        <button class="btn btn-info w-100 py-3 rounded-top-0 fw-semibold">
+                            Encerrar Aposta R$49,00
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="closed-bets" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="card">
                     <div class="card-header text-info fw-black fs-5 py-3 mb-0">
                         Simples
                     </div>
@@ -275,8 +312,12 @@
                     </div>
                 </div>
             </div>
-        
-        <div class="footer mt-4">
+        </div>
+    </div>
+
+    <!-- rodapé -->
+    <div class="container mt-0">
+        <div class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-sm-6 mb-4">
